@@ -16,11 +16,20 @@ function selectedColor() {
 
 selectedColor();
 
-let paintBoard = document.getElementById('pixel-board');
+const paintBoard = document.getElementById('pixel-board');
 
 paintBoard.addEventListener('click', (event) => {
-  let realColor = document.querySelector('.selected').id;
+  const realColor = document.querySelector('.selected').id;
   if (event.target.className === 'pixel') {
     event.target.style.backgroundColor = realColor;
+  }
+});
+
+const clearButton = document.getElementById('clear-board');
+
+clearButton.addEventListener('click', function() {
+  const squares = document.querySelectorAll('.pixel')
+  for (let index = 0; index < squares.length; index += 1) {
+    squares[index].style.backgroundColor = 'white';
   }
 });
