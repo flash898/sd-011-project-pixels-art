@@ -16,18 +16,7 @@ function selectedColor() {
 
 selectedColor();
 
-const paintBoard = document.getElementById('pixel-board');
-
-paintBoard.addEventListener('click', (event) => {
-  const realColor = document.querySelector('.selected').id;
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = realColor;
-  }
-});
-
-const clearButton = document.getElementById('clear-board');
-
-clearButton.addEventListener('click', function() {
+clearButton.addEventListener('click', () => {
   const squares = document.querySelectorAll('.pixel')
   for (let index = 0; index < squares.length; index += 1) {
     squares[index].style.backgroundColor = 'white';
