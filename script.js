@@ -16,8 +16,10 @@ function selectedColor() {
 
 selectedColor();
 
+const clearButton = document.getElementById('clear-board');
+
 clearButton.addEventListener('click', () => {
-  const squares = document.querySelectorAll('.pixel')
+  const squares = document.querySelectorAll('.pixel');
   for (let index = 0; index < squares.length; index += 1) {
     squares[index].style.backgroundColor = 'white';
   }
