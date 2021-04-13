@@ -16,14 +16,18 @@ function selectedColor() {
 
 selectedColor();
 
-const paintBoard = document.getElementById('pixel-board');
+function colorPixels() {
+  const targetedColor = document.getElementById('pixel-board');
+  targetedColor.addEventListener('click', (event) => {
+    const pixels = event.target;
+    const actualColor = document.querySelector('.selected');
+    if (pixels.className === 'pixel') {
+      pixels.style.backgroundColor = actualColor.style.backgroundColor;
+    }
+  });
+}
 
-paintBoard.addEventListener('click', (event) => {
-  const realColor = document.querySelector('.selected').id;
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = realColor;
-  }
-});
+colorPixels();
 
 const clearButton = document.getElementById('clear-board');
 
