@@ -21,7 +21,6 @@ const clearButton = document.querySelectorAll('#clear-board');
 clearButton.addEventListener('click', () => {
   const squares = document.querySelectorAll('.pixel');
   for (let index = 0; index < squares.length; index += 1) {
-    const targeted = squares[index];
-    targeted.style.backgroundColor = 'white';
+    squares[index].style.backgroundColor = 'white';
   }
 });
