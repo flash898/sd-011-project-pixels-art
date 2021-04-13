@@ -1,20 +1,23 @@
-window.onload = function blackSelected() {
-  document.getElementById('color1').classList.add('selected');
+function blackSelected() {
+  const black = document.getElementById('color1');
+  black.classList.add('selected');
 };
+
+blackSelected();
 
 const colors = document.querySelector('#color-palette');
 
-function selectedColor() {
-  colors.addEventListener('click', (event) => {
-    const color = document.querySelector('.selected');
-    if (event.target.id !== 'color-palette') {
-      color.classList.remove('selected');
-      event.target.classList.add('selected');
-    }
-  });
+function addClass(event) {
+  const targetedClasses = event.target;
+  const classes = document.getElementsByClassName('selected');
+  for (let index = 0; index < classes.length; index += 1) {
+    classes[index].classList.remove('selected');
+  }
+  targetedClasses.classList.add('selected');
 }
 
-selectedColor();
+const result = document.querySelector('#color-palette');
+result.addEventListener('click', addClass);
 
 function colorPixels() {
   const targetedColor = document.getElementById('pixel-board');
